@@ -32,3 +32,4 @@ should be fine with a small userbase.  Might configure to use [jsDelivr OSS CDN]
 * Code - MIT: (C)2020 Tom Byrer
 
 Freely use in your own app, but please give credit & link to both of us clearly in the front page of your app & README.
+
