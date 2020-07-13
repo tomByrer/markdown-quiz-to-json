@@ -24,6 +24,7 @@ If the source markdown has a [bad entry](https://github.com/lydiahallie/javascri
 * Make into an API, likely with [Cloudflare WOrkers](https://github.com/tomByrer/awesome-cloudflare-workers).  But IMHO loading direct from
 `https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz.json`
 should be fine with a small userbase.  Might configure to use [jsDelivr OSS CDN](https://www.jsdelivr.com/) instead.
+* Seperate answers from quiz; conceal/randomize possible-answer IDs
 
 ## License
 

@@ -1,3 +1,6 @@
+// runs other scripts, bot for actual use & testing
+// local MarkDown file in sister folder
+
 const md2json = require("./lhjq-md-into-json")
 const fs = require('fs')
 // import path from 'path'
