@@ -25,7 +25,9 @@ If the source markdown has a [bad entry](https://github.com/lydiahallie/javascri
 `https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz.json`
 should be fine with a small userbase.  Might configure to use [jsDelivr OSS CDN](https://www.jsdelivr.com/) instead.
 
-## Licence
+## License
 
-* Code: (C)2020 Tom Byrer
-* quiz.json (c)2019-2020 Lydia Hallie
+* quiz.json -  MIT: (c)2019-2020 Lydia Hallie
+* Code - MIT: (C)2020 Tom Byrer
+
+Freely use in your own app, but please give credit & link to both of us clearly in the front page of your app & README.
