@@ -2,6 +2,7 @@
 // local MarkDown file in sister folder
 
 const md2json = require("./lhjq-md-into-json")
+const random = require("./random")
 const fs = require('fs')
 // import path from 'path'
 // const __dirname = path.resolve()
@@ -12,3 +13,7 @@ let resObj = md2json.lhjqMDintoJSON(quizMD)
 
 // console.log(JSON.stringify(resObj))
 fs.writeFileSync( './quiz.json', JSON.stringify(resObj) )
+
+random.entryInternals(resObj)
+random.shuffleOrder(resObj)
+fs.writeFileSync( './quiz-random.json', JSON.stringify(resObj) )

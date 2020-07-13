@@ -9,7 +9,16 @@ Inside the parent folder where you locally downloaded `lydiahallie/javascript-qu
 
 ## Use
 
-Inside `markdown-quiz-to-json` folder:
+### Instant
+
+Save the pre-compiled [quiz.json](
+`https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz.json`) directly into your local folder to use!
+
+The [quiz-random.json](https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz-random.json) adds more interests by changing out the monotonous "What's the output?" question with a few more interesting takes, reorders the answers & questions.
+
+### Rebuild JSON
+
+Have [NodeJS](https://nodejs.org/) installed.  Inside `markdown-quiz-to-json` folder:
 `node cli`
  A new 	`quiz.json` should be output.  If you want process another file, edit the `fs.readFileSync` filename.
 
@@ -17,9 +26,28 @@ The key-names should be self-explainitory.   Note that only 1 code example is al
 
 If the source markdown has a [bad entry](https://github.com/lydiahallie/javascript-questions/pull/385), the RegEx will likely skip it, but still capture the ohter entries.
 
+### In-app Randomness
+
+If you want to help prevent cheating or boredom, you can re-random the questions and answers everytime the app is run.  Note: the `idx` field still refects the orginal order in the MarkDown.
+
+Assuming `quiz.json` & `random.js` are in the root of your NodeJS project:
+
+```js
+const quizQuestions = require("./quis.json")
+const random = require("./random")
+random.entryInternals(quizQuestions)
+random.shuffleOrder(quizQuestions)
+// quizQuestions is mutated
+```
+
+## History
+
+* v1.1 : optional randomize entry order, option order, and some question titles
+* v1 : full length key names in JSON
+* v0 : inital release
+
 ## TODO
 
-* Create question & answer shufflers
 * Give semi-correct answers a "exactness" rating between 0 & 1.
 * Make into an API, likely with [Cloudflare WOrkers](https://github.com/tomByrer/awesome-cloudflare-workers).  But IMHO loading direct from
 `https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz.json`
