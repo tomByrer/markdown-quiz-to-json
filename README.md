@@ -13,7 +13,7 @@ Inside `markdown-quiz-to-json` folder:
 `node cli`
  A new 	`quiz.json` should be output.  If you want process another file, edit the `fs.readFileSync` filename.
 
- The JSON format uses single-letter key names to keep file size down.  (Currently 157Kb without gzip.)  Read the `.push()` code lines for the aliases.  The multiple choice answers are an array `possibleArr` with the correct answer as `"e": 1`.  This will help if you deside to ranomize the possible answer order.
+The key-names should be self-explainitory.   Note that only 1 code example is allowed in the current API.  So you'll have to combine seperate 'files' (eg HTML & CSS) into 1 file.
 
 If the source markdown has a [bad entry](https://github.com/lydiahallie/javascript-questions/pull/385), the RegEx will likely skip it, but still capture the ohter entries.
 
@@ -24,6 +24,7 @@ If the source markdown has a [bad entry](https://github.com/lydiahallie/javascri
 * Make into an API, likely with [Cloudflare WOrkers](https://github.com/tomByrer/awesome-cloudflare-workers).  But IMHO loading direct from
 `https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz.json`
 should be fine with a small userbase.  Might configure to use [jsDelivr OSS CDN](https://www.jsdelivr.com/) instead.
+* Seperate answers from quiz; conceal/randomize possible-answer IDs
 
 ## License
 
