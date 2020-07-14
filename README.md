@@ -2,10 +2,6 @@
 
 Tosses a few RegEx and loops at a specifically formatted MarkDown file to spit out a JSON file so custom quiz software can be created easier.  Right now the only format it is comptable with is [lydiahallie/javascript-questions](https://github.com/lydiahallie/javascript-questions), a very popular list of advanced JavaScript questions.
 
-## Instalition
-
-Inside the parent folder where you locally downloaded `lydiahallie/javascript-questions`:
-`git clone https://github.com/tomByrer/markdown-quiz-to-json`
 
 ## Use
 
@@ -28,11 +24,19 @@ https://cdn.jsdelivr.net/gh/tombyrer/markdown-quiz-to-json@1/quiz-random.json
 
 ### Rebuild JSON
 
-Have [NodeJS](https://nodejs.org/) installed.  Inside `markdown-quiz-to-json` folder:
-`node cli`
- A new 	`quiz.json` should be output.  If you want process another file, edit the `fs.readFileSync` filename.
+Inside the parent folder where you locally downloaded `lydiahallie/javascript-questions`:
 
-The key-names should be self-explainitory.   Note that only 1 code example is allowed in the current API.  So you'll have to combine seperate 'files' (eg HTML & CSS) into 1 file.
+```bash
+git clone https://github.com/tomByrer/markdown-quiz-to-json
+```
+
+Have [NodeJS](https://nodejs.org/) installed.  Inside `markdown-quiz-to-json` folder:
+
+```bash
+node cli
+```
+
+ A new 	`quiz.json` should be output.  If you want process another file, edit the `fs.readFileSync` filename.  The key-names should be self-explainitory.   Note that only 1 code example is allowed in the current API.  So you'll have to combine seperate 'files' (eg HTML & CSS) into 1 file.
 
 If the source markdown has a [bad entry](https://github.com/lydiahallie/javascript-questions/pull/385), the RegEx will likely skip it, but still capture the ohter entries.
 
@@ -50,11 +54,18 @@ random.shuffleOrder(quizQuestions)
 // quizQuestions is mutated
 ```
 
+
+## Tech
+
+Uses a [big RegEx](https://regex101.com/r/hFfT0M/10) with [named capture groups](https://2ality.com/2017/05/regexp-named-capture-groups.html) to parce the Markdown into a JS object.
+
+
 ## History
 
 * v1.1 : optional randomize entry order, option order, and some question titles
 * v1 : full length key names in JSON
 * v0 : inital release
+
 
 ## TODO
 
@@ -63,6 +74,7 @@ random.shuffleOrder(quizQuestions)
 `https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz.json`
 should be fine with a small userbase.  Might configure to use [jsDelivr OSS CDN](https://www.jsdelivr.com/) instead.
 * Seperate answers from quiz; conceal/randomize possible-answer IDs
+
 
 ## License
 

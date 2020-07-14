@@ -3,7 +3,7 @@
 
 exports.lhjqMDintoJSON = function( quizMD ) {
 	const reEntry = /---\n\n###### (?<idx>\d+). (?<question>.+)\n(?:\n```(?<codeLang>[a-z]+)\n(?<code>[\s\S]+?)(?:\n```\n))?\n(?<optionList>[\s\S]+?)(?:\n<details><summary><b>Answer<\/b><\/summary>\n<p>\n\n#### Answer: )(?<answer>[ABCDEF])\n\n(?<reason>.+[\s\S]*?)\n\n<\/p>\n<\/details>/gm
-	const reoptionList = /(?<optionIdx>[ABCDEF]): (?<option>[\s\S]+?)\n/gm
+	const reOptionList = /(?<optionIdx>[ABCDEF]): (?<option>[\s\S]+?)\n/gm
 	let quizEntries = [...quizMD.matchAll(reEntry)]
 	let quizFormatted = []
 	let optionREresp = []
@@ -22,7 +22,7 @@ exports.lhjqMDintoJSON = function( quizMD ) {
 			reason,
 		}}] of quizEntries.entries()) {
 
-			optionREresp = [...optionList.matchAll(reoptionList)]
+			optionREresp = [...optionList.matchAll(reOptionList)]
 			optionArr = []
 
 				for (const [i,	// Index of the `for` loop
