@@ -16,6 +16,16 @@ Save the pre-compiled [quiz.json](
 
 The [quiz-random.json](https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz-random.json) adds more interests by changing out the monotonous "What's the output?" question with a few more interesting takes, reorders the answers & questions.
 
+#### CDN
+
+[jsDelivr OSS CDN]() can be used in frontend projects.  Here the `@1` flag means your app will automatically be updated for any v1.x changes, but not v2.  jsDeivr automataically applies GZip, so only 35k is sent over the wire.
+
+```
+https://cdn.jsdelivr.net/gh/tombyrer/markdown-quiz-to-json@1/quiz.json
+// if you want the pre-randomized file:
+https://cdn.jsdelivr.net/gh/tombyrer/markdown-quiz-to-json@1/quiz-random.json
+```
+
 ### Rebuild JSON
 
 Have [NodeJS](https://nodejs.org/) installed.  Inside `markdown-quiz-to-json` folder:
