@@ -7,8 +7,7 @@ Tosses a few RegEx and loops at a specifically formatted MarkDown file to spit o
 
 ### Instant
 
-Save the pre-compiled [quiz.json](
-`https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz.json`) directly into your local folder to use!
+Save the pre-compiled [quiz.json](https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz.json) directly into your local folder to use!
 
 The [quiz-random.json](https://raw.githubusercontent.com/tomByrer/markdown-quiz-to-json/master/quiz-random.json) adds more interests by changing out the monotonous "What's the output?" question with a few more interesting takes, reorders the answers & questions.
 
